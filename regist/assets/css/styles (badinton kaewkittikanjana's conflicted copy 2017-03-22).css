@@ -1,0 +1,118 @@
+
+ul {
+    clear: both;
+}
+
+.content {
+	background: #fff;
+    position: absolute;
+}
+
+.bar-header-secondary>input {
+    margin-top: 6px;
+    height: 31px;
+}
+.table-view-cell {
+
+	color: black;
+	background-color:#fff; 
+    margin: 0 !important;
+    border: none;
+}
+.table-view {
+    margin: 0 !important;
+    border: none;
+}
+
+.details h1 {
+    padding-top: 16px;
+    font-size: 18px;
+}
+
+.media-object {
+    width: 45px;
+    height: 45px;
+    border-radius: 25px;
+}
+
+.icon-call {
+    background: transparent url(images/ic_action_phone_outgoing.png);
+    background-repeat: no-repeat;
+}
+
+.icon-sms {
+    background: transparent url(images/ic_action_dialog.png);
+    background-repeat: no-repeat;
+}
+
+.icon-mail {
+    background: transparent url(images/ic_action_mail.png);
+    background-repeat: no-repeat;
+}
+
+.icon-manager {
+    background: transparent url(images/ic_action_user.png);
+    background-repeat: no-repeat;
+}
+
+.icon-reports {
+    background: transparent url(images/ic_action_users.png);
+    background-repeat: no-repeat;
+}
+
+.icon-contact {
+    background: transparent url(images/ic_action_add.png);
+    background-repeat: no-repeat;
+}
+
+.icon-location {
+    background: transparent url(images/ic_action_location.png);
+    background-repeat: no-repeat;
+}
+
+.login-title { color:#666;}
+
+.fa-calendar {font: normal normal normal 14px/1 FontAwesome;font-size:24px;}
+
+.input-group {  background: #fff;
+    display: block;}
+.title { 
+    /*width: 90%; */
+    padding: 2px 30px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+a:hover {background-color:#B0C4DE; 
+	text-decoration: none;} /*color click*/
+header.bar.bar-nav {
+    -webkit-transform: translateZ(0);
+}
+.bar.bar-header-secondary{
+   -webkit-transform: translateZ(0);
+}
+
+.bar.bar-footer{
+   -webkit-transform: translateZ(0);
+}
+
+.label-spare-part {
+    color:#666666;
+    font-size: 14px;
+}
+.media:first-child {
+    margin-top: 0px;
+}
+
+input, select, textarea{
+    color: #222222;
+}
+textarea:focus, input:focus {
+    color: #222222;
+}
+.title{
+    color: white;
+    background-color: #3F72AF;  
+}
+p{
+	color: gray; /*text To-dp list*/
+}
+#loading{
+    background-color: white;
+}

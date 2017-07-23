@@ -1,0 +1,252 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport"/>
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="assets/bootstrap/css/font-awesome.min.css" rel="stylesheet"/>
+        <!-- <link rel="stylesheet" href="libs/event-calendar-widget/css/style.css"> -->
+        <!-- <link href="../assets/ratchet/css/ratchet-theme-android.min.css" rel="stylesheet"> -->
+        <link href="assets/ratchet/css/ratchet-theme-ios.min.css" rel="stylesheet"/>
+        <link href="assets/ratchet/css/ratchet.min.css" rel="stylesheet"/>
+        <link href="assets/css/pageslider.css" rel="stylesheet"/>
+        <link href="assets/css/styles.css" rel="stylesheet"/>
+     </head>
+    <body> 
+<!-- Login Page -->
+<script id="login-tpl" type="text/template">
+ <div id='content'>
+  <div class="content" style="top: calc(50% - 230px);">
+    <form name="form1" method="post" action="check_login.php">
+    <div class="input-group" style="background: none;">
+                <div class="card">
+                  <div style="padding-top:30px; margin-bottom:30px; text-align:center;color:#999;"><h3>Login</h3></div> 
+                  <input type="text" placeholder="Username" id="username" name="username">
+                  <input type="password" placeholder="Password" id="password" name="password">
+                  <div style="margin:30px;margin-bottom:30px;">
+                  <a href="#regist">Register</a>
+                    <button type="submit" name="Submit" class="btn btn-xs btn-block" value="Login">Log In</button>
+                  </div>                  
+                </div>
+              </div>
+	</form>
+ </div>
+</div>    
+</script>
+<!-- Profile Page -->
+<script id="profile-tpl" type="text/template">
+<header class="bar bar-nav">
+<a class="icon icon-compose pull-right" href="#profile/edit/{{id}}"></a>
+  <h1 class="title">Profile</h1>
+</header>
+     <div id='content'>
+<div id='picture'>
+<img class="mx-auto rounded-circle" style="width:250px;height:250px" id="camp" src="img/{{img}}">
+</div>
+
+
+<div class="row">
+<div class="col-md-6" id='detail' style="margin-left: 33%;" >
+  <div class="card" >
+          <div class="profile-body margin-bottom-20" id='detail2'>
+            <div class="tab-v1">
+                <h2>Profile</h2>
+              <div class="tab-content">
+                <div id="profile" class="profile-edit tab-pane fade active in">
+                  <br>
+                  <dl class="dl-horizontal">
+                    <dt><strong>Your name </strong></dt>
+                    <dd>
+                     {{firstname}}   {{lastname}}
+                    </dd>
+                    <hr>
+                    <dt><strong>Email Address </strong></dt>
+                    <dd>
+                      {{email}}
+                    </dd>
+                    <hr>
+                    <dt><strong>Phone Number </strong></dt>
+                    <dd>
+                     {{phone}}
+                    </dd>
+                    <hr>
+                    <dt><strong>Address</strong></dt>
+                    <dd>
+                      {{address}}
+                    </dd>
+                    <hr>
+                    <dt><strong>Gender </strong></dt>
+                    <dd>
+                       {{gender}}
+                    </dd>
+                    <hr>
+                  </dl>
+                </div>
+            </div>
+          </div>
+        </div>
+  </div> 
+</div>    
+<div style="padding-bottom: 50px;">
+  <a href="#">
+  <input id='btnLogout' type="submit" class="btn btn-primary" name="btnLogout" value="Logout">
+  </a>
+  </div>
+</script>
+
+<!-- Edit page -->
+<script id="edit-tpl" type="text/template">
+<header class="bar bar-nav">
+<a class="icon icon-left-nav pull-left" href="#profile"></a>
+  <h1 class="title">Edit</h1>
+</header>
+<form name="form1" method="post" action="update.php" enctype="multipart/form-data">
+     <div id='content'>
+
+<div id='picture'>
+<img class="mx-auto rounded-circle" style="width:250px;height:250px" id="camp" src="img/{{img}}">
+</div>
+  <div style="margin-left: 45%; "><input type="file" name="uprub" id="uprub"></div>
+
+<div class="row">
+<div class="col-md-9" id='detail' style="margin-left: 34% ">
+  <div class="card" >
+          <div class="profile-body margin-bottom-20" id='detail2'>
+            <div class="tab-v1">
+             
+                <h2>Profile</h2>
+              
+       
+              <div class="tab-content">
+                <div id="profile" class="profile-edit tab-pane fade active in">
+                  <br>
+                  <dl class="dl-horizontal">
+                    <dt><strong>Firstname</strong></dt>
+                    <dd>
+                      <td><input name="firstname" type="text" id="firstname" value="{{firstname}}" required="required">
+                      <input name="id" type="hidden" id="id" value="{{id}}" >
+                      </td>
+                    </dd>
+                    <hr>
+                      <dt><strong>Lastname</strong></dt>
+                    <dd>
+                      <td><input name="lastname" type="text" id="lastname" value="{{lastname}}" required="required">
+                      <input name="id" type="hidden" id="id" value="{{id}}" >
+                      </td>
+                    </dd>
+                    <hr>
+                    <dt><strong> Email Address </strong></dt>
+                    <dd>
+                       <td><input name="email" type="text" id="email" value="{{email}}"></td>
+                    </dd>
+                    <hr>
+                    <dt><strong>Phone Number </strong></dt>
+                    <dd>
+                      <td><input name="phone" type="text" id="phone" value="{{phone}}" required="required" pattern="[0-9]{10}"></td>
+                    </dd>
+                    <hr>
+                    <dt><strong>Address </strong></dt>
+                    <dd>
+                     <td><input name="address" type="text" id="address" value="{{address}}" required="required"></td>
+                    </dd>
+                    <hr>
+                    <dt><strong>Gender </strong></dt>
+                    <dd>
+                     <td><select name="gender" type="text" id="gender"> 
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option></select></td>
+                    </dd>
+                    <hr>
+                  </dl>
+                </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+
+<div style="padding-bottom: 50px;">
+<input type="submit" class="btn btn-primary" name="Submit" id='Submit' value="Save"> 
+</div>
+</form>
+</div>
+</script>
+<!-- Register Page -->
+<script id="regist-tpl" type="text/template">
+<header class="bar bar-nav">
+<a class="icon icon-left-nav pull-left" href="#"></a>
+  <h1 class="title">Register</h1>
+</header>
+<div class="content">
+<form name="form1" method="post" action="save_register.php" enctype="multipart/form-data">
+<h3 style="margin-left: 45%;margin-top: 3%">Register Form <br></h3>
+<div style="margin-left: 35%;">
+  
+  <table width="400" border="1" style="width: 400px;margin-left: 50px;margin-top: 2% ">
+    <tbody>
+     <tr>
+        <td width="125"> &nbsp;Username</td>
+        <td width="180">
+          <input name="username" type="text" id="username" >
+        </td>
+      </tr>
+      <tr>
+        <td> &nbsp;Password</td>
+        <td><input name="password" type="password" id="password">
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;Firstname</td>
+        <td><input name="firstname" type="text" id="firstname" required="required" pattern="[A-Za-z0-9]{1,20}"></td>
+      </tr>
+       <tr>
+        <td>&nbsp;LastName</td>
+        <td><input name="lastname" type="text" id="lastname" required="required" pattern="[A-Za-z0-9]{1,20}"></td>
+      </tr>
+        <tr>
+        <td>&nbsp;Address</td>
+        <td><input name="address" type="text" id="address" required="required"></td>
+      </tr>  
+      <tr>
+        <td>&nbsp;Gender</td>
+        <td><select name="gender" type="text" id="gender"> 
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option></select></td>
+      </tr>
+      <tr>
+        <td>&nbsp;Email Address</td>
+        <td><input name="email" type="email" id="email" required="required" >
+        <p>Ex.example@hotmail.com</p></td>
+      </tr>
+      <tr>
+        <td>&nbsp;Phone Number</td>
+        <td><input name="phone" type="text" id="phone" required="required" pattern="[0-9]{10}">
+        <p>Ex.0123456789</p></td>
+      </tr>
+         <tr>
+        <td>&nbsp;Image Url</td>
+        <td><input type="file" name="uprub" id="image"><br></td>
+      </tr>
+    </tbody>
+  
+</table>
+   </div>
+  <br>
+  <input type="submit" class="btn btn-primary" name="Submit" id='btnRegist' value="Regist">
+</form>
+</div>
+</script>
+
+<script src="lib/jquery.js"></script>
+<script src="lib/router.js"></script>
+<script src="lib/pageslider.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="js/Login.js"></script>
+<script src="js/Profile.js"></script>
+<script src="js/Edit.js"></script>
+<script src="js/Register.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
